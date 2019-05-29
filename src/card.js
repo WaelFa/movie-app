@@ -1,17 +1,18 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
+import StarRatingComponent from 'react-star-rating-component';
 
-const MovieCard = ({movie: {title, year, image, rating}}) => {
+const MovieCard = (props) => {
+  const movie = props.movie;
   return (
     <div>
       <Card>
-        <CardImg top width="100%" src={image} />
+        <CardImg top width="100%" src={movie.image} />
         <CardBody>
-          <CardTitle>{title}</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick Card text to build on the card title and make up the bulk of the card's content.</CardText>
-          <div>{rating}</div>
+          <CardTitle>{movie.title}</CardTitle>
+          <CardSubtitle>{movie.year}</CardSubtitle>
+          <StarRatingComponent value={movie.rating} editing={false}/>
         </CardBody>
       </Card>
     </div>
