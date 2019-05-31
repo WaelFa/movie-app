@@ -1,0 +1,26 @@
+.App{
+    background-color: #24292E;
+}
+
+.Movie-card {
+    
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 50px;
+}
+.Movie-List{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+.Add-button{
+    border-radius: 20px !important;
+    width: 20%;
+    height: 500px;
+    margin-left: 40%;
+    font-size: 100px !important;
+    font-weight: bolder;
+}
