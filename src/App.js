@@ -73,7 +73,7 @@ export default class App extends Component {
     this.setState({ filteredByN: filteredbyName })
   }
   ratingSearch = (rating) => {
-    let filteredbyRating =this.state.filtered.filter((el) => { return el.rating == rating })
+    let filteredbyRating =this.state.filtered.filter((el) => { return el.rating >= rating })
     this.setState({filteredByR: filteredbyRating})
   }
   intersection = (tab1, tab2)=>{
