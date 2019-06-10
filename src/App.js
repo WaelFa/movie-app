@@ -7,6 +7,7 @@ import ModalExample from './addMovies'
 
 
 
+
 let movies = [
   {
     key: 1,
@@ -63,7 +64,8 @@ export default class App extends Component {
       // movielist: movies,
       filtered: movies,
       filteredByN: movies,
-      filteredByR :movies
+      filteredByR: movies,
+      isLoading:true,
       // rating1: 0,
       // keyword1:''
     }
@@ -85,6 +87,9 @@ export default class App extends Component {
       filtered: a,
     })
   }
+  componentDidMount(){
+    setTimeout(()=>this.setState({isLoading:false}),4000)
+  }
   
 
   render() {
@@ -92,9 +97,9 @@ export default class App extends Component {
       <div className="App">
         <center>
           <Search searchByName={(keyword) => this.search(keyword)} />
-          <RatingSearch searchByRate={(rating)=>this.ratingSearch(rating)}/>
+          <RatingSearch searchByRate={(rating) => this.ratingSearch(rating)} />
         </center>
-        <MovieList movies={this.intersection(this.state.filteredByN, this.state.filteredByR)} />
+        <MovieList movies={this.intersection(this.state.filteredByN, this.state.filteredByR)} isLoading={this.state.isLoading}/>
         <ModalExample newmovie={this.state.filtered} getstatefrom={this.getstatefrom} />
       </div>
     )

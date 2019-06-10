@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './card';
-import ReactStrap from 'reactstrap'
+import LoadingHoc from './hoc'
 
 function MovieList(props) {
     const movieList = props.movies.map((el , key)=><Card movie={el} key={el.key} ></Card> )
@@ -11,4 +11,4 @@ function MovieList(props) {
     )
     
 }
-export default MovieList;
+export default LoadingHoc(MovieList);
